@@ -1,7 +1,14 @@
 pipeline{
     agent any
 
-    # environments placeholder
+    environment {
+      ECR_URL = '228435919907.dkr.ecr.us-east-1.amazonaws.com/yurii-tiab-tech-conduit'
+      ECR_URI = '228435919907.dkr.ecr.us-east-1.amazonaws.com'
+      CLUSTER_NAME = 'yurii-tiab-tech'
+      ECS_SERVICE_NAME = 'conduit'
+      AWS_DEFAULT_REGION = 'us-east-1'
+      
+    }
     
     stages{
         stage("Build"){
