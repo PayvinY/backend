@@ -7,7 +7,8 @@ pipeline{
       CLUSTER_NAME = 'yurii-tiab-tech'
       ECS_SERVICE_NAME = 'conduit'
       AWS_DEFAULT_REGION = 'us-east-1'
-      }
+   
+     }
     
     stages{
         stage("Build"){
