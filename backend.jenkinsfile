@@ -31,7 +31,7 @@ pipeline{
                 ]]) {
                         sh """
                         aws ecr get-login-password | docker login --username AWS --password-stdin \
-                        
+                        ${env.ECR_URI} 
                         
                         docker push ${env.ECR_URL}
 
