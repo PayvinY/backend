@@ -10,15 +10,15 @@ pipeline{
         stage("Build"){
             steps{
                   withAWSParameterStore(
-                    credentialsId: 'aws_creds',
-                    naming: 'basename',
-                    path: "/${env.BRANCH_NAME}",
-                    regionName: "${env.AWS_DEFAULT_REGION}"
+                        credentialsId: 'aws_creds',
+                        naming: 'basename',
+                        path: "/${env.BRANCH_NAME}",
+                        regionName: "${env.AWS_DEFAULT_REGION}"
                     ){
                         sh """
                         docker build -t ${env.ECR_URL} .
                         """
-                    }
+                     }
             }
         }
         stage("Deploy"){
